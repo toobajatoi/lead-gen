@@ -33,9 +33,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application's code into the container
 COPY . .
 
+# Make the startup script executable
+RUN chmod +x start.sh
+
 # Set an environment variable to indicate we're in production
 # Our Python script will use this to run Chrome in headless mode.
 ENV RENDER=true
 
-# Command to run the application using Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "app:app"] 
+# Command to run the application using our startup script
+CMD ["./start.sh"] 
