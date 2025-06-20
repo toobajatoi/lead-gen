@@ -23,6 +23,11 @@ def get_driver():
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_experimental_option('useAutomationExtension', False)
     
+    # --- Performance Optimization ---
+    # Disable images to save bandwidth and memory, which is critical on free tiers.
+    prefs = {"profile.managed_default_content_settings.images": 2}
+    chrome_options.add_experimental_option("prefs", prefs)
+    
     # Run in headless mode if on Render (or any server environment)
     if os.environ.get('RENDER'):
         print("Render environment detected. Running in headless mode.")
