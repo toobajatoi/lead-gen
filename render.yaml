@@ -5,6 +5,7 @@ services:
     plan: free
     healthCheckPath: /
     dockerfilePath: ./Dockerfile
+    dockerCommand: gunicorn --bind 0.0.0.0:$PORT app:app --timeout 120
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.4
