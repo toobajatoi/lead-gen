@@ -7,6 +7,4 @@ services:
     dockerfilePath: ./Dockerfile
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.4
-      - key: PATH
-        value: /opt/render/project/src/.local/bin:$PATH 
+        value: 3.11.4 
