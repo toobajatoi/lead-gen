@@ -37,7 +37,9 @@ def run_scraper(query, max_results):
             'error': None
         })
 
-        cmd = ['/usr/local/bin/python', '-u', 'lead_generator.py']
+        # Use the correct python executable path based on the environment
+        python_executable = '/usr/local/bin/python' if os.environ.get('RENDER') else 'python'
+        cmd = [python_executable, '-u', 'lead_generator.py']
         input_data = f"{query}\n{max_results}\n"
         
         process = subprocess.Popen(
