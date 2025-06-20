@@ -37,7 +37,7 @@ def run_scraper(query, max_results):
             'error': None
         })
 
-        cmd = ['python', '-u', 'lead_generator.py']
+        cmd = ['/usr/local/bin/python', '-u', 'lead_generator.py']
         input_data = f"{query}\n{max_results}\n"
         
         process = subprocess.Popen(
