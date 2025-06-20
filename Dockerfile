@@ -38,4 +38,4 @@ COPY . .
 ENV RENDER=true
 
 # Command to run the application using Gunicorn
-CMD ["gunicorn", "--workers", "3", "--bind", "0.0.0.0:10000", "app:app"] 
+CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "app:app"] 
