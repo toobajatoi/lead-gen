@@ -1,0 +1,25 @@
+# Local configuration files
+config.json
+
+# Credentials - NEVER commit these
+credentials.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment files
+.env
+
+# Output files
+*.csv
+*.json
+!config.json.example
+
+# OS-specific files
+.DS_Store
+Thumbs.db 
